@@ -1,3 +1,147 @@
 body { 
     font-family: 'Roboto Condensed', sans-serif;
 }    
+nav {
+    background-color: gray;
+
+}
+.navbar-collapse {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+.navbar-toggler {
+    background-color: white;
+}
+.nav-link {
+    padding: 0%;
+}
+.logo-img {
+    border: solid 8px whitesmoke;
+}
+.btn-light {
+    line-height: 15px;
+    padding: 0%;
+    margin-left: 1rem;
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.bi-search, .bi-chevron-left, .bi-chevron-right {
+    width: 32px;    
+}
+
+.bi-search {
+    background-color: black;
+    color: white;
+    border: black;
+}
+
+.bi-search:hover {
+    background-color: gray;
+    border: black;
+    color: white;
+}
+.first-title {
+    padding: 20px;
+    background-color: rgb(236, 233, 233) ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+form {
+    display: flex;
+    justify-content: space-between;
+}
+fieldset {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-between;
+    min-width: 50%;
+}
+
+
+.search {
+    display: flex;
+    min-width: 30%;
+    max-width: 50%;
+}
+
+.cards-4 {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 8%;
+}
+.card {
+    border: solid 1px black;
+    border-radius: 1%;
+}
+.card-img-top {
+    width: 100%;
+    height: 10vw;
+    object-fit: cover;
+    border: solid 1px black ;
+    border-radius: 1%;
+    box-shadow: -2px -2px 5px rgb(85, 84, 84) ;
+}
+.bottom-card {
+    display: flex;
+    justify-content: space-between;
+}
+.color-button {
+    box-shadow: -3px -3px 4px black;
+    background-color: white;
+    border: solid black 1px;
+    color: black;
+    border-radius: 0%;
+    padding: 0 12px ;
+}
+.color-button:hover{
+    background-color: gray;
+    border: black;
+    color: white;
+}
+.price-card{
+    display: flex;
+    align-items: center;
+}
+
+footer{
+    background-color: rgb(236, 233, 233);
+    padding: 1vh;
+
+}
+.instagram, .whatsapp {
+    border-radius: 50%;
+}
+
+.facebook {
+    background-color: black;
+    border-radius: 50%;
+    border: solid black 5px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.h3-footer {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
