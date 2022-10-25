@@ -47,7 +47,7 @@ nav {
     color: white;
 }
 .first-title {
-    padding: 20px;
+    padding: 10px;
     background-color: rgb(236, 233, 233) ;
     display: flex;
     flex-direction: row;
@@ -74,11 +74,11 @@ fieldset {
     max-width: 50%;
 }
 
-.cards-4 {
+/* .cards-4 {
     display: flex;
     justify-content: space-around;
     margin-bottom: 8%;
-}
+} */
 .card {
     border: solid 1px black;
     border-radius: 1%;
@@ -114,6 +114,7 @@ fieldset {
 }
 
 footer{
+    margin-top: 5%;
     background-color: rgb(236, 233, 233);
     padding: 1vh;
 
