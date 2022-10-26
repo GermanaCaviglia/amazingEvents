@@ -21,25 +21,34 @@ nav {
 }
 .logo-img {
     border: solid 8px whitesmoke;
+    margin: 10px 0px;
 }
 .btn-light {
     line-height: 15px;
     padding: 0%;
     margin-left: 1rem;
-    width: 18%;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.bi-search, .bi-chevron-left, .bi-chevron-right {
+.bi-chevron-left, .bi-chevron-right {
     width: 32px;    
 }
 
 .bi-search {
+    
     background-color: black;
     color: white;
     border: black;
+    width: 32px; 
+    height: 38px;
 }
+.nav-item {
+    padding: 5px 12px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
 
 .bi-search:hover {
     background-color: gray;
@@ -47,7 +56,7 @@ nav {
     color: white;
 }
 .first-title {
-    padding: 10px;
+    padding: 8px;
     background-color: rgb(236, 233, 233) ;
     display: flex;
     flex-direction: row;
@@ -66,13 +75,10 @@ fieldset {
     justify-content:space-between;
     min-width: 50%;
 }
-
-
 .search {
     display: flex;
-    min-width: 30%;
-    max-width: 50%;
 }
+
 
 /* .cards-4 {
     display: flex;
