@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <title>Contact</title>
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light py-2 px-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <!-- LOGO -->
+                <img src="../assets/logo.jpeg" alt="logo.img" width="200" height=""
+                    class="d-inline-block align-text-center logo-img">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex me-auto mb-lg-0">
+                    <li class="nav-item btn btn-light">
+                        <!-- HOME -->
+                        <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item btn btn-light">
+                        <!-- UPCOMING EVENTS -->
+                        <a class="nav-link" href="./upcomingEvents.html">Upcoming <br> Events</a>
+                    </li>
+                    <li class="nav-item btn btn-light">
+                        <!-- PAST EVENTS -->
+                        <a class="nav-link" href="./pastEvents.html">Past <br> Events</a>
+                    </li>
+                    <li class="nav-item btn btn-light">
+                        <!-- CONTACT -->
+                        <a class="nav-link active" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item btn btn-light">
+                        <!-- STATS -->
+                        <a class="nav-link" href="./stats.html">Stats</a>
+                    </li>
+            </div>
+        </div>
+    </nav>
+    <div class="first-title">
+        <svg xmlns="http://www.w3.org/2000/svg" width="" height="" fill="currentColor" class="bi bi-chevron-left "
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+        </svg>
+        <h2 class="fs-1">Contact Us</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="" height="" fill="currentColor" class="bi bi-chevron-right "
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+    </div>
+
+    <form class="d-flex mx-5 my-4 justify-content-center">
+        <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 p-0 mb-5">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="name" class="form-control" id="name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="floatingTextarea">Comments:</label>
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+
+            </div>
+        </div>
+    </form>
+
+    <footer>
+        <div class="footer">
+            <div class="contact-icons">
+                <!-- INSTAGRAM -->
+                <img src="../assets/instagram.png" alt="instagram" width="32" height="32"
+                    class="instagram mx-2 img-fluid">
+                <!-- FACEBOOK -->
+                <img src="../assets/facebook.png" alt="facebook" width="32" height="32" class="facebook mx-2">
+                <!-- WHATSAPP -->
+                <img src="../assets/whatsapp.jpg" alt="whatsapp" width="32" height="32" class="whatsapp mx-2">
+            </div>
+            <div class="h3-footer">
+                <h3 class="mx-2 my-0">Amazing Events</h3>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <!-- JAVASCRIPT -->
+    <script src="../script.js"></script>
+</body>
+
+</html>
