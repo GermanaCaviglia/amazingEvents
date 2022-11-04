@@ -163,10 +163,17 @@ footer{
     border-radius: 50%;
     border: solid black 5px;
 }
-
+footer {
+    
+    width: 100%;
+    bottom: 0%;
+    align-items: center;
+    position: fixed;
+}
 .footer {
     display: flex;
     justify-content: space-between;
+    
 }
 
 .contact-icons {
@@ -180,4 +187,7 @@ footer{
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+.table-margin {
+    margin-bottom: 5rem;
 }
