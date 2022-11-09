@@ -189,18 +189,20 @@ function creatingCards(parameters) {
         if (convertDate(i) < startingDateToCompare) {
             cardContent += `
                 <div class="card text-center px-3 pt-3 pb-2 mx-2 my-3 col-lg-12" style="width: 18rem;">
-                <img src="${data.eventos[i].image}" class="card-img-top img-fluid" alt="race">
-                <div class="card-body mt-2 p-0">
-                    <h5 class="card-title ">${data.eventos[i].name}</h5>
-                    <p class="card-text" style="height: 6rem;">${data.eventos[i].description}</p>
-                    <div class="bottom-card">
-                        <div class="price-card">
-                            <p class="m-0">$${data.eventos[i].price}</p>
-                        </div>
-                        <div class="button-card">
-                            <button class="btn btn-primary color-button" type="button"><a class="button-a" href="./pages/events.html">More info</a></button>
+                    <img src="${data.eventos[i].image}" class="card-img-top img-fluid" alt="race">
+                    <div class="card-body mt-2 p-0">
+                        <h5 class="card-title ">${data.eventos[i].name}</h5>
+                        <p class="card-text" style="height: 6rem;">${data.eventos[i].description}</p>
+                        <div class="bottom-card">
+                            <div class="price-card">
+                                <p class="m-0">$${data.eventos[i].price}</p>
+                            </div>
+                            <div class="button-card">
+                                <button class="btn btn-primary color-button" type="button"><a class="button-a" href="./pages/events.html">More info</a></button>
+                            </div>
                         </div>
                     </div>
+                </div>
                 `;
             
         }; 
