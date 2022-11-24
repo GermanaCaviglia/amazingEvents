@@ -191,3 +191,7 @@ footer {
 .table-margin {
     margin-bottom: 5rem;
 }
+
+.hidden {
+    display: none;
+}

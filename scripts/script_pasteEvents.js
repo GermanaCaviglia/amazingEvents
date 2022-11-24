@@ -188,22 +188,23 @@ function creatingCards(parameters) {
     for (let i = 0; i < data.eventos.length; i++) {
         if (convertDate(i) < startingDateToCompare) {
             cardContent += `
-                <div class="card text-center px-3 pt-3 pb-2 mx-2 my-3 col-lg-12" style="width: 18rem;">
-                    <img src="${data.eventos[i].image}" class="card-img-top img-fluid" alt="race">
-                    <div class="card-body mt-2 p-0">
-                        <h5 class="card-title ">${data.eventos[i].name}</h5>
-                        <p class="card-text" style="height: 6rem;">${data.eventos[i].description}</p>
-                        <div class="bottom-card">
-                            <div class="price-card">
-                                <p class="m-0">$${data.eventos[i].price}</p>
-                            </div>
-                            <div class="button-card">
-                                <button class="btn btn-primary color-button" type="button"><a class="button-a" href="./pages/events.html">More info</a></button>
-                            </div>
-                        </div>
+            <div class="data-events card text-center px-3 pt-3 pb-2 mx-2 my-3 col-lg-12" style="width: 18rem;" id= "${data.eventos[i].category.split(' ').join('').toLowerCase()}">
+            <img src="${data.eventos[i].image}" class="card-img-top img-fluid" alt="race">
+            <div class="card-body mt-2 p-0">
+                <h5 class="card-title">${data.eventos[i].name}</h5>
+                <p class="card-text" style="height: 6rem;">${data.eventos[i].description}</p>
+                <div class="bottom-card">
+                    <div class="price-card">
+                        <p class="m-0">$${data.eventos[i].price}</p>
+                    </div>
+                    <div class="button-card">
+                        <button class="btn btn-primary color-button" type="button"><a class="button-a" href="./pages/events.html">More info</a></button>
                     </div>
                 </div>
-                `;
+            </div>
+        </div>
+            `;
+            
             
         }; 
     }
@@ -211,6 +212,62 @@ function creatingCards(parameters) {
 };
 
 creatingCards(data);
+
+
+/*----- Categorías de los eventos -----*/
+let categoriesRepeated = data.eventos.map(evento => evento.category)
+const categoriesWithoutRepeating = [...new Set(categoriesRepeated)];
+const categoriesFieldset = document.getElementById('categories-fieldset');
+function creatingCategories() {
+  categoriesWithoutRepeating.map((category) => {
+    const newCheckbox = document.createElement('div')
+    newCheckbox.classList.add('category-checkbox');
+    newCheckbox.classList.add('mx-1')
+    let categoryCheckbox = `
+    <input class="check-boxes" type="checkbox" name="${category.split(' ').join('').toLowerCase()}" id="${category.split(' ').join('').toLowerCase()}">
+    <label for="${category.split(' ').join('').toLowerCase()}">${category}</label>`
+    newCheckbox.innerHTML = categoryCheckbox
+    categoriesFieldset.appendChild(newCheckbox)
+  })
+};
+creatingCategories()
+
+
+//input
+const inputSearch = document.getElementById('input-search')
+//cada una de las cards
+const dataEvents = document.querySelectorAll('.data-events')
+
+categoriesFieldset.addEventListener('change', (event) => {
+  // cada uno de los checkbox
+  const checkBoxes = document.querySelectorAll('.check-boxes')
+  let checkedCategories = []
+  checkBoxes.forEach(checkbox => {
+    if (checkbox.checked) {
+      checkedCategories.push(checkbox.id)
+    }
+  })
+  //console.log(checkedCategories)
+  dataEvents.forEach((card) => {
+    if (checkedCategories.includes(card.id)) {
+      card.classList.remove('hidden')
+    } else {
+      card.classList.add('hidden')
+    }
+    if (checkedCategories.length === 0) {
+      card.classList.remove('hidden')
+    }
+  })
+})
+
+inputSearch.addEventListener('keyup', (event) => {
+    // console.log(event.target.value)
+    dataEvents.forEach(dataEvent => {
+      dataEvent.textContent.split(' ').join('').toLowerCase().includes(event.target.value.split(' ').join('').toLowerCase())
+      ? dataEvent.classList.remove('hidden')
+      : dataEvent.classList.add('hidden')
+    });
+  })
 
 /* 
 const mainDate = data.fechaActual;

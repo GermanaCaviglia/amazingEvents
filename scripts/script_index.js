@@ -157,18 +157,17 @@ const data = {
     }
   ]
 }
-
-function creatingCards(parameters){
-    let cardContent = ``;
-    const divOfCards = document.getElementById("cards");
-    console.log("estamos mostrando el div contenedor", divOfCards);
-
-    for (let i = 0; i < data.eventos.length; i++) {
-        cardContent += `
-        <div class="card text-center px-3 pt-3 pb-2 mx-2 my-3 col-lg-12" style="width: 18rem;">
+/*----- Instertar las cards en index.html -----*/
+function creatingCards(parameters) {
+  let cardContent = ``;
+  const divOfCards = document.getElementById("cards");
+  //console.log("estamos mostrando el div contenedor", divOfCards);
+  for (let i = 0; i < data.eventos.length; i++) {
+    cardContent += `
+        <div class="data-events card text-center px-3 pt-3 pb-2 mx-2 my-3 col-lg-12" style="width: 18rem;" id= "${data.eventos[i].category.split(' ').join('').toLowerCase()}">
         <img src="${data.eventos[i].image}" class="card-img-top img-fluid" alt="race">
         <div class="card-body mt-2 p-0">
-            <h5 class="card-title ">${data.eventos[i].name}</h5>
+            <h5 class="card-title">${data.eventos[i].name}</h5>
             <p class="card-text" style="height: 6rem;">${data.eventos[i].description}</p>
             <div class="bottom-card">
                 <div class="price-card">
@@ -181,153 +180,72 @@ function creatingCards(parameters){
         </div>
     </div>
         `;
-    };
-
-    divOfCards.innerHTML = cardContent;
-}
-
-creatingCards(data)
-
-/* const usuarios = [
-  {
-    id: 1,
-    name: "Leanne Graham",
-    username: "Bret",
-    email: "Sincere@april.biz",
-    address: {
-      street: "Kulas Light",
-      suite: "Apt. 556",
-      city: "Gwenborough",
-      zipcode: "92998-3874",
-      geo: {
-        lat: "-37.3159",
-        lng: "81.1496",
-      },
-    },
-    phone: "1-770-736-8031 x56442",
-    website: "hildegard.org",
-    company: {
-      name: "Romaguera-Crona",
-      catchPhrase: "Multi-layered client-server neural-net",
-      bs: "harness real-time e-markets",
-    },
-  },
-  {
-    id: 2,
-    name: "Ervin Howell",
-    username: "Antonette",
-    email: "Shanna@melissa.tv",
-    address: {
-      street: "Victor Plains",
-      suite: "Suite 879",
-      city: "Wisokyburgh",
-      zipcode: "90566-7771",
-      geo: {
-        lat: "-43.9509",
-        lng: "-34.4618",
-      },
-    },
-    phone: "010-692-6593 x09125",
-    website: "anastasia.net",
-    company: {
-      name: "Deckow-Crist",
-      catchPhrase: "Proactive didactic contingency",
-      bs: "synergize scalable supply-chains",
-    },
-  },
-  {
-    id: 3,
-    name: "Clementine Bauch",
-    username: "Samantha",
-    email: "Nathan@yesenia.net",
-    address: {
-      street: "Douglas Extension",
-      suite: "Suite 847",
-      city: "McKenziehaven",
-      zipcode: "59590-4157",
-      geo: {
-        lat: "-68.6102",
-        lng: "-47.0653",
-      },
-    },
-    phone: "1-463-123-4447",
-    website: "ramiro.info",
-    company: {
-      name: "Romaguera-Jacobson",
-      catchPhrase: "Face to face bifurcated interface",
-      bs: "e-enable strategic applications",
-    },
-  },
-  {
-    id: 4,
-    name: "Patricia Lebsack",
-    username: "Karianne",
-    email: "Julianne.OConner@kory.org",
-    address: {
-      street: "Hoeger Mall",
-      suite: "Apt. 692",
-      city: "South Elvis",
-      zipcode: "53919-4257",
-      geo: {
-        lat: "29.4572",
-        lng: "-164.2990",
-      },
-    },
-    phone: "493-170-9623 x156",
-    website: "kale.biz",
-    company: {
-      name: "Robel-Corkery",
-      catchPhrase: "Multi-tiered zero tolerance productivity",
-      bs: "transition cutting-edge web services",
-    },
-  },
-  {
-    id: 5,
-    name: "Chelsey Dietrich",
-    username: "Kamren",
-    email: "Lucio_Hettinger@annie.ca",
-    address: {
-      street: "Skiles Walks",
-      suite: "Suite 351",
-      city: "Roscoeview",
-      zipcode: "33263",
-      geo: {
-        lat: "-31.8129",
-        lng: "62.5342",
-      },
-    },
-    phone: "(254)954-1289",
-    website: "demarco.info",
-    company: {
-      name: "Keebler LLC",
-      catchPhrase: "User-centric fault-tolerant solution",
-      bs: "revolutionize end-to-end systems",
-    },
-  },
-];
-
-function exampleFunction(parameter) {
-  //defino variable vacia
-  let content = ``; 
-  //llamo al div que quiero insertarle contenido
-  const divOfDoc = document.getElementById('example');
-  //chequeo si se imprime en la consola para saber si esta ok 
-  console.log("divOfDoc", divOfDoc);
-
-  //armo la funcion 
-  for (let i = 0; i < usuarios.length; i++) {
-    //inserto a content valores
-    //ej a=2 => a+=2 ----> output:4 
-    content += `<div class="card">
-                  <h1>${usuarios[i].email} </h1>;
-              </div>;
-              ` 
   };
+  divOfCards.innerHTML = cardContent;
+}
+creatingCards(data);
 
-  //al div que le quiero inyectar en html y que le quiero inyectar
-  divOfDoc.innerHTML = content;
+/*----- Primero quiero mapear el objeto data y crear un array con las categorias sin que se repitan con Set() -----*/
+let categoriesRepeated = data.eventos.map(evento => evento.category)
+// console.log(categoriesRepeated)
+const categoriesWithoutRepeating = [...new Set(categoriesRepeated)];
+// console.log(categoriesWithoutRepeating)
+
+/*----- Ahora quiero insertar esas categorías en forma de checkbox en la pestaña -----*/
+const categoriesFieldset = document.getElementById('categories-fieldset');
+//console.log(categoriesFieldset)
+function creatingCategories() {
+  categoriesWithoutRepeating.map((category) => {
+    const newCheckbox = document.createElement('div')
+    newCheckbox.classList.add('category-checkbox');
+    newCheckbox.classList.add('mx-1')
+    let categoryCheckbox = `
+    <input class="check-boxes" type="checkbox" name="${category.split(' ').join('').toLowerCase()}" id="${category.split(' ').join('').toLowerCase()}">
+    <label for="${category.split(' ').join('').toLowerCase()}">${category}</label>`
+    newCheckbox.innerHTML = categoryCheckbox
+    categoriesFieldset.appendChild(newCheckbox)
+  })
 };
+creatingCategories()
 
-exampleFunction(usuarios);
 
- */
+//categories-fieldset contenedor de inputs
+
+//input
+const inputSearch = document.getElementById('input-search')
+//cada una de las cards
+const dataEvents = document.querySelectorAll('.data-events')
+
+categoriesFieldset.addEventListener('change', (event) => {
+  // cada uno de los checkbox
+  const checkBoxes = document.querySelectorAll('.check-boxes')
+  let checkedCategories = []
+  checkBoxes.forEach(checkbox => {
+    if (checkbox.checked) {
+      checkedCategories.push(checkbox.id)
+    }
+  })
+  //console.log(checkedCategories)
+  dataEvents.forEach((card) => {
+    if (checkedCategories.includes(card.id)) {
+      card.classList.remove('hidden')
+    } else {
+      card.classList.add('hidden')
+    }
+    if (checkedCategories.length === 0) {
+      card.classList.remove('hidden')
+    }
+  })
+})
+
+inputSearch.addEventListener('keyup', (event) => {
+  // console.log(event.target.value)
+  dataEvents.forEach(dataEvent => {
+    dataEvent.textContent.split(' ').join('').toLowerCase().includes(event.target.value.split(' ').join('').toLowerCase())
+      ? dataEvent.classList.remove('hidden')
+      : dataEvent.classList.add('hidden')
+  });
+});
+
+
+
