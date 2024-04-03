@@ -3,7 +3,6 @@ body {
 }    
 nav {
     background-color: gray;
-
 }
 .navbar-collapse {
     display: flex;
@@ -63,10 +62,12 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
+
 form {
     display: flex;
     justify-content: space-between;
 }
+
 fieldset {
     display: flex;
     flex-direction: row;
@@ -75,6 +76,7 @@ fieldset {
     justify-content:space-between;
     min-width: 50%;
 }
+
 .search {
     display: flex;
 }
